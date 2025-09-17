@@ -195,13 +195,15 @@ function filterMenu(filter) {
 }
 
 // WhatsApp Integration
-function sendToWhatsApp(phoneNumber) {
+function sendToWhatsApp() {
     const orderText = orderTextarea.value.trim();
     
     if (!orderText) {
         alert('Please enter your order details');
         return;
     }
+    
+    const phoneNumber = "919105289551"; // your WhatsApp number
     
     const message = encodeURIComponent(`Hi! I would like to place an order:\n\n${orderText}`);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
